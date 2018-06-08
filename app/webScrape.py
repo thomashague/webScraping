@@ -44,14 +44,17 @@ def scrape():
     # ==========Get the JPL Mars featured image==========
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
+    time.sleep(5)
 
     # Find and click the full image button
     full_image_elem = browser.find_by_id('full_image')
     full_image_elem.click()
+    time.sleep(5)
 
     # Find the more info button and click that
     more_info_elem = browser.find_link_by_partial_text('more info')
     more_info_elem.click()
+    time.sleep(5)
 
     # Now that splinter is on the web page we're looking for, parse the html with soup
     html = browser.html
@@ -61,13 +64,14 @@ def scrape():
     img_url_rel = img_soup.find('figure', class_='lede').find('img')['src']
 
     # add to the base url to create an absolute path
-    mars['featuredImage'] = f'https://www.jpl.nasa.gov{img_url_rel}'
+    mars['featured_image'] = f'https://www.jpl.nasa.gov{img_url_rel}'
 
     # ==========Get the weather on Mars from Twitter==========
 
     # As usual, start with the URL and visit it with browser
     url = 'https://twitter.com/marswxreport?lang=en'
     browser.visit(url)
+    
 
     # use soup to parse the html
     html = browser.html

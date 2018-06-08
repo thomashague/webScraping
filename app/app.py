@@ -1,5 +1,5 @@
 # Import flask to create a server that can display data
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, redirect
 # Import flask_pymongo to be able to pull fom the Mongo database
 from flask_pymongo import PyMongo
 # Import python file that pulls all the data from web and puts it into Mongo database
@@ -26,7 +26,7 @@ def scrape():
         mars_data,
         upsert=True
     )
-    return 'Successful Scraping!'
+    return redirect("/", code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)
