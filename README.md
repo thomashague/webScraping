@@ -1,4 +1,4 @@
-#Web Scraping with Python, HTML, Flask, MongoDB, Splinter, BeautifulSoup
+Web Scraping with Python, HTML, Flask, MongoDB, Splinter, BeautifulSoup
 
 With this project I learned how to pull data from another website and display it on my own website.
 
