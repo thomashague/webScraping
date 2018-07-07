@@ -32,4 +32,4 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-    # Why isnt this working??? Is it this file or my webScrape file?
+#checkback on
